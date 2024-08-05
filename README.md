@@ -1,0 +1,1 @@
+i make four file in which split the data by using 4 diffrenent method
