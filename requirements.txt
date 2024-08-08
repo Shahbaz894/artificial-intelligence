@@ -1,3 +1,4 @@
 langchain
 ipykernel
 langchain_community
+langchain_huggingface
