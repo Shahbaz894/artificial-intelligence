@@ -31,7 +31,7 @@ else:
     input_text = st.text_input('Ask about Flutter code')
 
     # Initialize Ollama model
-    llm = Ollama(model='gemma:2b')
+    llm = Ollama(model='gemma2')
 
     # Output parser
     output_parser = StrOutputParser()
