@@ -1,8 +1,3 @@
-i make four file in which split the data by using 4 diffrenent method
-
-
-
-
 import os
 from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
@@ -20,13 +15,13 @@ if token is None:
 else:
     print("Token retrieved successfully")
 
-# Set up the Hugging Face LLM directly with parameters
+# Set up the Hugging Face LLM with explicit parameters
 repo_id = "mistralai/Mistral-7B-Instruct-v0.2"
 llm = HuggingFaceEndpoint(
     repo_id=repo_id,
-    temperature=0.7,         # Explicitly set parameters
-    max_length=128,          # Explicitly set parameters
-    huggingface_token=token  # Explicitly set token
+    temperature=0.7,  # Set temperature explicitly
+    max_length=128,   # Set max_length explicitly
+    huggingface_token=token  # Set token explicitly
 )
 
 # Create the prompt template
@@ -52,8 +47,8 @@ if input_text:
     try:
         # Format the input using the prompt template
         formatted_input = prompt.format(question=input_text)
-        # Pass the formatted input to the chain
-        response = chain.invoke(formatted_input)
+        # Call the model and handle the response
+        response = chain.invoke({"question": formatted_input})
         st.write(response)
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")

@@ -46,3 +46,6 @@ else:
             st.write(response)
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
+
+
+# huggingface_gen_ai.py
